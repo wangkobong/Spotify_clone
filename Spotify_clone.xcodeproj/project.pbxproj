@@ -13,6 +13,23 @@
 		FE37007C27D9D45C008F5FB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE37007B27D9D45C008F5FB5 /* Assets.xcassets */; };
 		FE37007F27D9D45C008F5FB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE37007D27D9D45C008F5FB5 /* LaunchScreen.storyboard */; };
 		FE37008D27D9D746008F5FB5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE37008C27D9D746008F5FB5 /* TabBarViewController.swift */; };
+		FE37008F27D9D7FE008F5FB5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE37008E27D9D7FE008F5FB5 /* SearchViewController.swift */; };
+		FE37009127D9D815008F5FB5 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE37009027D9D815008F5FB5 /* LibraryViewController.swift */; };
+		FE37009527D9D83E008F5FB5 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE37009427D9D83E008F5FB5 /* AuthViewController.swift */; };
+		FE37009727D9D84F008F5FB5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE37009627D9D84F008F5FB5 /* WelcomeViewController.swift */; };
+		FE37009927D9D85D008F5FB5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE37009827D9D85D008F5FB5 /* SettingsViewController.swift */; };
+		FE37009B27D9D876008F5FB5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE37009A27D9D876008F5FB5 /* ProfileViewController.swift */; };
+		FE37009D27D9D880008F5FB5 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE37009C27D9D880008F5FB5 /* PlayerViewController.swift */; };
+		FE37009F27D9D89D008F5FB5 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE37009E27D9D89D008F5FB5 /* PlaylistViewController.swift */; };
+		FE3700A127D9D8B1008F5FB5 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3700A027D9D8B1008F5FB5 /* SearchResultViewController.swift */; };
+		FE3700A327D9D8D3008F5FB5 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3700A227D9D8D3008F5FB5 /* AuthManager.swift */; };
+		FE3700A527D9D8E4008F5FB5 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3700A427D9D8E4008F5FB5 /* APICaller.swift */; };
+		FE3700A727D9D8F7008F5FB5 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3700A627D9D8F7008F5FB5 /* HapticsManager.swift */; };
+		FE3700A927D9D917008F5FB5 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3700A827D9D917008F5FB5 /* Playlist.swift */; };
+		FE3700AB27D9D923008F5FB5 /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3700AA27D9D923008F5FB5 /* AudioTrack.swift */; };
+		FE3700AD27D9D92C008F5FB5 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3700AC27D9D92C008F5FB5 /* Artist.swift */; };
+		FE3700AF27D9D93A008F5FB5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3700AE27D9D93A008F5FB5 /* UserProfile.swift */; };
+		FE3700B127DA245B008F5FB5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3700B027DA245B008F5FB5 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +41,23 @@
 		FE37007E27D9D45C008F5FB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE37008027D9D45C008F5FB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE37008C27D9D746008F5FB5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		FE37008E27D9D7FE008F5FB5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FE37009027D9D815008F5FB5 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		FE37009427D9D83E008F5FB5 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		FE37009627D9D84F008F5FB5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		FE37009827D9D85D008F5FB5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FE37009A27D9D876008F5FB5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FE37009C27D9D880008F5FB5 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		FE37009E27D9D89D008F5FB5 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
+		FE3700A027D9D8B1008F5FB5 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		FE3700A227D9D8D3008F5FB5 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		FE3700A427D9D8E4008F5FB5 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		FE3700A627D9D8F7008F5FB5 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		FE3700A827D9D917008F5FB5 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		FE3700AA27D9D923008F5FB5 /* AudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
+		FE3700AC27D9D92C008F5FB5 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		FE3700AE27D9D93A008F5FB5 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		FE3700B027DA245B008F5FB5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +104,8 @@
 		FE37008627D9D52B008F5FB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FE37007627D9D45B008F5FB5 /* HomeViewController.swift */,
-				FE37008C27D9D746008F5FB5 /* TabBarViewController.swift */,
+				FE37009327D9D823008F5FB5 /* Other */,
+				FE37009227D9D81B008F5FB5 /* Core */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -87,6 +121,10 @@
 		FE37008827D9D53F008F5FB5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FE3700A827D9D917008F5FB5 /* Playlist.swift */,
+				FE3700AA27D9D923008F5FB5 /* AudioTrack.swift */,
+				FE3700AC27D9D92C008F5FB5 /* Artist.swift */,
+				FE3700AE27D9D93A008F5FB5 /* UserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,6 +139,9 @@
 		FE37008A27D9D557008F5FB5 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				FE3700A227D9D8D3008F5FB5 /* AuthManager.swift */,
+				FE3700A427D9D8E4008F5FB5 /* APICaller.swift */,
+				FE3700A627D9D8F7008F5FB5 /* HapticsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -111,8 +152,34 @@
 				FE37007B27D9D45C008F5FB5 /* Assets.xcassets */,
 				FE37007227D9D45B008F5FB5 /* AppDelegate.swift */,
 				FE37007427D9D45B008F5FB5 /* SceneDelegate.swift */,
+				FE3700B027DA245B008F5FB5 /* Extensions.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		FE37009227D9D81B008F5FB5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FE37008C27D9D746008F5FB5 /* TabBarViewController.swift */,
+				FE37007627D9D45B008F5FB5 /* HomeViewController.swift */,
+				FE37008E27D9D7FE008F5FB5 /* SearchViewController.swift */,
+				FE37009027D9D815008F5FB5 /* LibraryViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FE37009327D9D823008F5FB5 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				FE37009427D9D83E008F5FB5 /* AuthViewController.swift */,
+				FE37009627D9D84F008F5FB5 /* WelcomeViewController.swift */,
+				FE37009827D9D85D008F5FB5 /* SettingsViewController.swift */,
+				FE37009A27D9D876008F5FB5 /* ProfileViewController.swift */,
+				FE37009C27D9D880008F5FB5 /* PlayerViewController.swift */,
+				FE37009E27D9D89D008F5FB5 /* PlaylistViewController.swift */,
+				FE3700A027D9D8B1008F5FB5 /* SearchResultViewController.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,10 +252,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE37008F27D9D7FE008F5FB5 /* SearchViewController.swift in Sources */,
+				FE3700A927D9D917008F5FB5 /* Playlist.swift in Sources */,
+				FE3700A327D9D8D3008F5FB5 /* AuthManager.swift in Sources */,
+				FE37009727D9D84F008F5FB5 /* WelcomeViewController.swift in Sources */,
+				FE37009B27D9D876008F5FB5 /* ProfileViewController.swift in Sources */,
 				FE37008D27D9D746008F5FB5 /* TabBarViewController.swift in Sources */,
 				FE37007727D9D45B008F5FB5 /* HomeViewController.swift in Sources */,
+				FE3700A727D9D8F7008F5FB5 /* HapticsManager.swift in Sources */,
+				FE3700AB27D9D923008F5FB5 /* AudioTrack.swift in Sources */,
+				FE3700B127DA245B008F5FB5 /* Extensions.swift in Sources */,
+				FE37009527D9D83E008F5FB5 /* AuthViewController.swift in Sources */,
 				FE37007327D9D45B008F5FB5 /* AppDelegate.swift in Sources */,
+				FE37009127D9D815008F5FB5 /* LibraryViewController.swift in Sources */,
+				FE3700AF27D9D93A008F5FB5 /* UserProfile.swift in Sources */,
+				FE37009F27D9D89D008F5FB5 /* PlaylistViewController.swift in Sources */,
+				FE3700AD27D9D92C008F5FB5 /* Artist.swift in Sources */,
 				FE37007527D9D45B008F5FB5 /* SceneDelegate.swift in Sources */,
+				FE37009D27D9D880008F5FB5 /* PlayerViewController.swift in Sources */,
+				FE3700A127D9D8B1008F5FB5 /* SearchResultViewController.swift in Sources */,
+				FE3700A527D9D8E4008F5FB5 /* APICaller.swift in Sources */,
+				FE37009927D9D85D008F5FB5 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
