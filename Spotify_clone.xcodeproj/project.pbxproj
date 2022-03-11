@@ -30,6 +30,7 @@
 		FE3700AD27D9D92C008F5FB5 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3700AC27D9D92C008F5FB5 /* Artist.swift */; };
 		FE3700AF27D9D93A008F5FB5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3700AE27D9D93A008F5FB5 /* UserProfile.swift */; };
 		FE3700B127DA245B008F5FB5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3700B027DA245B008F5FB5 /* Extensions.swift */; };
+		FE3700B327DB10EB008F5FB5 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3700B227DB10EB008F5FB5 /* AuthResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		FE3700AC27D9D92C008F5FB5 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		FE3700AE27D9D93A008F5FB5 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		FE3700B027DA245B008F5FB5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FE3700B227DB10EB008F5FB5 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				FE3700AA27D9D923008F5FB5 /* AudioTrack.swift */,
 				FE3700AC27D9D92C008F5FB5 /* Artist.swift */,
 				FE3700AE27D9D93A008F5FB5 /* UserProfile.swift */,
+				FE3700B227DB10EB008F5FB5 /* AuthResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				FE37008D27D9D746008F5FB5 /* TabBarViewController.swift in Sources */,
 				FE37007727D9D45B008F5FB5 /* HomeViewController.swift in Sources */,
 				FE3700A727D9D8F7008F5FB5 /* HapticsManager.swift in Sources */,
+				FE3700B327DB10EB008F5FB5 /* AuthResponse.swift in Sources */,
 				FE3700AB27D9D923008F5FB5 /* AudioTrack.swift in Sources */,
 				FE3700B127DA245B008F5FB5 /* Extensions.swift in Sources */,
 				FE37009527D9D83E008F5FB5 /* AuthViewController.swift in Sources */,
