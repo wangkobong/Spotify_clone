@@ -10,6 +10,8 @@ import Foundation
 final class AuthManager {
     static let shared = AuthManager()
     
+    private var refreshingToken = false
+    
     struct Constants {
         static let clientID = "9765b03be5204ff6a6120aa1906ec9e9"
         static let clientSecret = "00665d77172e4b5e80b966d8760356b6"
@@ -99,17 +101,45 @@ final class AuthManager {
         task.resume()
     }
     
-        func refreshInNeeded(completion: @escaping (Bool) -> Void) {
-//        guard shouldRefreshToken else {
-//            completion(true)
-//            return
-//        }
+    private var onRefreshBlocks = [((String) -> Void)]()
+    
+    /// API호출에 사용할 토큰 제공
+    public func withValidToken(completion: @escaping (String) -> Void) {
+        guard !refreshingToken else {
+            // Append the completion
+            onRefreshBlocks.append(completion)
+            return
+        }
+        if shouldRefreshToken {
+            // Refresh
+            refreshIfNeeded { [weak self] success in
+                if let token = self?.accessToken, success {
+                    completion(token)
+                }
+            }
+        } else if let token = accessToken {
+            completion(token)
+        }
+    }
+    
+    public func refreshIfNeeded(completion: @escaping (Bool) -> Void) {
+        guard !refreshingToken else {
+            return
+        }
+        
+        guard shouldRefreshToken else {
+            completion(true)
+            return
+        }
+        
         guard let refreshToken = self.refreshToken else {
             return
         }
         
         // 리프레쉬 토큰
         guard let url = URL(string: Constants.tokenAPIURL) else { return }
+        
+        refreshingToken = true
         
         var components = URLComponents()
         components.queryItems = [
@@ -132,6 +162,7 @@ final class AuthManager {
         
         
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
+            self?.refreshingToken = false
             guard let data = data, error == nil else {
                 completion(false)
                 return
@@ -139,8 +170,9 @@ final class AuthManager {
             
             do {
                 let result = try JSONDecoder().decode(AuthResponse.self, from: data)
+                self?.onRefreshBlocks.forEach{ $0(result.access_token) }
+                self?.onRefreshBlocks.removeAll()
                 self?.cacheToken(result: result)
-                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
                 print("Successfully refreshed")
                 completion(true)
             }
@@ -151,7 +183,6 @@ final class AuthManager {
         }
         
         task.resume()
-
     }
     
     private func cacheToken(result: AuthResponse) {
