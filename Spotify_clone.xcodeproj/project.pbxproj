@@ -33,10 +33,14 @@
 		FE3700B127DA245B008F5FB5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3700B027DA245B008F5FB5 /* Extensions.swift */; };
 		FE3700B327DB10EB008F5FB5 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3700B227DB10EB008F5FB5 /* AuthResponse.swift */; };
 		FE3700B527DB98F2008F5FB5 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3700B427DB98F2008F5FB5 /* SettingsModels.swift */; };
+		FE4DD59927DDD0320074F81E /* NewReleaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DD59827DDD0320074F81E /* NewReleaseCollectionViewCell.swift */; };
+		FE4DD59B27DDD0500074F81E /* FeaturedPlaylistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DD59A27DDD0500074F81E /* FeaturedPlaylistCollectionViewCell.swift */; };
+		FE4DD59D27DDD06B0074F81E /* RecommendedTrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DD59C27DDD06B0074F81E /* RecommendedTrackCollectionViewCell.swift */; };
 		FEF15E3627DCB9A00025D2EB /* NewReleasesReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF15E3527DCB9A00025D2EB /* NewReleasesReponse.swift */; };
 		FEF15E3827DCBAAD0025D2EB /* APIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF15E3727DCBAAD0025D2EB /* APIImage.swift */; };
 		FEF15E3A27DCBDDE0025D2EB /* FeaturedPlaylistsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF15E3927DCBDDE0025D2EB /* FeaturedPlaylistsResponse.swift */; };
 		FEF15E3C27DCC3650025D2EB /* RecommendedGenresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF15E3B27DCC3650025D2EB /* RecommendedGenresResponse.swift */; };
+		FEF15E3E27DCE2AD0025D2EB /* RecommendationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF15E3D27DCE2AD0025D2EB /* RecommendationsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,10 +74,14 @@
 		FE3700B027DA245B008F5FB5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FE3700B227DB10EB008F5FB5 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		FE3700B427DB98F2008F5FB5 /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
+		FE4DD59827DDD0320074F81E /* NewReleaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		FE4DD59A27DDD0500074F81E /* FeaturedPlaylistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistCollectionViewCell.swift; sourceTree = "<group>"; };
+		FE4DD59C27DDD06B0074F81E /* RecommendedTrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTrackCollectionViewCell.swift; sourceTree = "<group>"; };
 		FEF15E3527DCB9A00025D2EB /* NewReleasesReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesReponse.swift; sourceTree = "<group>"; };
 		FEF15E3727DCBAAD0025D2EB /* APIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImage.swift; sourceTree = "<group>"; };
 		FEF15E3927DCBDDE0025D2EB /* FeaturedPlaylistsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsResponse.swift; sourceTree = "<group>"; };
 		FEF15E3B27DCC3650025D2EB /* RecommendedGenresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedGenresResponse.swift; sourceTree = "<group>"; };
+		FEF15E3D27DCE2AD0025D2EB /* RecommendationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +157,7 @@
 		FE37008727D9D534008F5FB5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FE4DD59727DDD0160074F81E /* Browse */,
 				FE37007D27D9D45C008F5FB5 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -167,6 +176,7 @@
 				FEF15E3727DCBAAD0025D2EB /* APIImage.swift */,
 				FEF15E3927DCBDDE0025D2EB /* FeaturedPlaylistsResponse.swift */,
 				FEF15E3B27DCC3650025D2EB /* RecommendedGenresResponse.swift */,
+				FEF15E3D27DCE2AD0025D2EB /* RecommendationsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -222,6 +232,16 @@
 				FE3700A027D9D8B1008F5FB5 /* SearchResultViewController.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		FE4DD59727DDD0160074F81E /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				FE4DD59827DDD0320074F81E /* NewReleaseCollectionViewCell.swift */,
+				FE4DD59A27DDD0500074F81E /* FeaturedPlaylistCollectionViewCell.swift */,
+				FE4DD59C27DDD06B0074F81E /* RecommendedTrackCollectionViewCell.swift */,
+			);
+			path = Browse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,9 +369,13 @@
 				FE3700A727D9D8F7008F5FB5 /* HapticsManager.swift in Sources */,
 				FE3700B327DB10EB008F5FB5 /* AuthResponse.swift in Sources */,
 				FEF15E3827DCBAAD0025D2EB /* APIImage.swift in Sources */,
+				FEF15E3E27DCE2AD0025D2EB /* RecommendationsResponse.swift in Sources */,
 				FE3700AB27D9D923008F5FB5 /* AudioTrack.swift in Sources */,
 				FE3700B127DA245B008F5FB5 /* Extensions.swift in Sources */,
+				FE4DD59D27DDD06B0074F81E /* RecommendedTrackCollectionViewCell.swift in Sources */,
+				FE4DD59927DDD0320074F81E /* NewReleaseCollectionViewCell.swift in Sources */,
 				FE37009527D9D83E008F5FB5 /* AuthViewController.swift in Sources */,
+				FE4DD59B27DDD0500074F81E /* FeaturedPlaylistCollectionViewCell.swift in Sources */,
 				FE37007327D9D45B008F5FB5 /* AppDelegate.swift in Sources */,
 				FE37009127D9D815008F5FB5 /* LibraryViewController.swift in Sources */,
 				FE3700AF27D9D93A008F5FB5 /* UserProfile.swift in Sources */,
