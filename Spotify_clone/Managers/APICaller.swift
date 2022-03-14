@@ -92,7 +92,7 @@ final class APICaller {
         let seeds = genres.joined(separator: ",")
         createRequest(with: URL(string: Constants.baseAPIURL + "/recommendations?limit=40&seed_genres=\(seeds)"), type: .GET) {
             request in
-            
+     
             let task = URLSession.shared.dataTask(with: request) { data, _, error in
                 guard let data = data, error == nil else {
                     completion(.failure(APIError.failedToGetData))
