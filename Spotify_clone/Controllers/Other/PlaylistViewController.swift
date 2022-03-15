@@ -154,11 +154,6 @@ extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewData
         // Play song
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let width: CGFloat = 100
-        let height: CGFloat = 100
-        return CGSize(width: width, height: height)
-    }
 }
 
 extension PlaylistViewController: PlaylistHeaderCollectionReusableViewDelegate {
