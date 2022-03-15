@@ -9,8 +9,8 @@ import UIKit
 
 enum BrowseSectionType {
     case newRelease(viewModels: [NewReleasesCellViewModel]) // 1
-    case featuredPlaylists(viewModels: [NewReleasesCellViewModel]) // 2
-    case recommendedTracks(viewModels: [NewReleasesCellViewModel]) // 3
+    case featuredPlaylists(viewModels: [FeaturedPlaylistViewModel]) // 2
+    case recommendedTracks(viewModels: [RecommendedTrackViewModel]) // 3
 }
 
 class HomeViewController: UIViewController {
@@ -31,10 +31,15 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Browse"
         view.backgroundColor = .systemBackground
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(didTapSettings))
         view.addSubview(spinner)
+        let navigationBarAppearance = UINavigationBarAppearance()
+        let tabBarAppearance = UITabBarAppearance()
+        navigationBarAppearance.backgroundColor = .secondarySystemBackground
+        navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+
         configureCollectionView()
         fetchData()
         
@@ -42,7 +47,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionView.frame = view.bounds
+        collectionView.frame = view.safeAreaLayoutGuide.layoutFrame
+//        collectionView.frame = view.bounds
+//        collectionView.backgroundColor = .red
     }
     
     private func configureCollectionView() {
@@ -136,8 +143,14 @@ class HomeViewController: UIViewController {
         sections.append(.newRelease(viewModels: newAlbums.compactMap({
             return NewReleasesCellViewModel(name: $0.name, artworkURL: URL(string: $0.images.first?.url ?? ""), numberOfTracks: $0.total_tracks, artistName: $0.artists.first?.name ?? "-")
         })))
-        sections.append(.featuredPlaylists(viewModels: []))
-        sections.append(.recommendedTracks(viewModels: []))
+        sections.append(.featuredPlaylists(viewModels: playlist.compactMap{
+            return FeaturedPlaylistViewModel(name: $0.name, artworkURL: URL(string: $0.images.first?.url ?? ""), creatorName: $0.owner.display_name)
+        }))
+        
+        sections.append(.recommendedTracks(viewModels: tracks.compactMap {
+            return RecommendedTrackViewModel(name: $0.name, artistName: $0.artists.first?.name ?? "-", artworkURL: URL(string: $0.album.images.first?.url ?? ""))
+        }))
+        
         collectionView.reloadData()
     }
 
@@ -182,13 +195,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedPlaylistCollectionViewCell.identifier, for: indexPath) as? FeaturedPlaylistCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            cell.backgroundColor = .blue
+            cell.configure(with: viewModels[indexPath.row])
             return cell
         case .recommendedTracks(let viewModels):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedTrackCollectionViewCell.identifier, for: indexPath) as? RecommendedTrackCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            cell.backgroundColor = .orange
+            cell.configure(with: viewModels[indexPath.row])
             return cell
             
         }
@@ -198,7 +211,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         switch section {
         case 0:
             // Item
-            let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1))
+            let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
             )
             
             item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)

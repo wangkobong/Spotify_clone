@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         
 //        print(AuthManager.shared.signInURL?.absoluteString)
-
+        AppAppearance.setupAppearance()
         return true
     }
 
