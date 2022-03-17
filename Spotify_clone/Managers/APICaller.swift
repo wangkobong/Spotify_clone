@@ -32,7 +32,6 @@ final class APICaller {
                 
                 do {
                     let result = try JSONDecoder().decode(AlbumDetailsResponse.self, from: data)
-                    print(result)
                     completion(.success(result))
                 }
                 catch {
@@ -239,7 +238,6 @@ final class APICaller {
     public func search(with query: String, completion: @escaping (Result<[SearchResult], Error>) -> Void) {
         createRequest(with: URL(string: Constants.baseAPIURL + "/search?limit=10&type=album,artist,playlist,track&q=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"), type: .GET) { request in
             let task = URLSession.shared.dataTask(with: request) { data, _, error in
-                print(request.url?.absoluteString ?? "none")
                 guard let data = data, error == nil else {
                     completion(.failure(APIError.failedToGetData))
                     return
