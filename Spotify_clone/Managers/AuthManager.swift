@@ -17,7 +17,7 @@ final class AuthManager {
         static let clientSecret = "00665d77172e4b5e80b966d8760356b6"
         static let tokenAPIURL = "https://accounts.spotify.com/api/token"
         static let redirectURI = "https://iosacademy.io"
-        static let scopes = "user-read-private%20playlist-modify-private%20playlist-read-private%20playlist-modify-private%20user-follow-read%20user-library-modify%20user-library-read%20user-read-email"
+        static let scopes = "user-read-private%20playlist-modify-private%20playlist-read-private%20user-follow-read%20user-library-modify%20user-library-read%20user-read-email%20user-top-read%20playlist-modify-public"
     }
     
     private init() {}
@@ -105,13 +105,16 @@ final class AuthManager {
     
     /// API호출에 사용할 토큰 제공
     public func withValidToken(completion: @escaping (String) -> Void) {
+        print(#function)
         guard !refreshingToken else {
             // Append the completion
+            print("토큰리프레쉬 안함")
             onRefreshBlocks.append(completion)
             return
         }
         if shouldRefreshToken {
             // Refresh
+            print("토큰리프레쉬함")
             refreshIfNeeded { [weak self] success in
                 if let token = self?.accessToken, success {
                     completion(token)
