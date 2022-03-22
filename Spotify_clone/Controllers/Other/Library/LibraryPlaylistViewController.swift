@@ -87,9 +87,10 @@ class LibraryPlaylistViewController: UIViewController {
                   !text.trimmingCharacters(in: .whitespaces).isEmpty else {
                       return
                   }
-            APICaller.shared.createPlaylist(with: text) { success in
+            APICaller.shared.createPlaylist(with: text) { [weak self] success in
                 if success {
                     // Refresh list of playlists
+                    self?.fetchData()
                 } else {
                     print("Failed to create playlist")
                 }
