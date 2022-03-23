@@ -58,6 +58,7 @@ class HomeViewController: UIViewController {
 
         configureCollectionView()
         fetchData()
+        addLongTapGesture()
         
     }
     
@@ -148,9 +149,8 @@ class HomeViewController: UIViewController {
                   let playlist = featuredPlaylist?.playlists.items,
                   let tracks = recommendations?.tracks else {
                       fatalError("Models are nil")
-                      return
                   }
-            print("Configuring viewModels")
+ 
             self.configureModels(newAlbums: newAlbums, tracks: tracks, playlist: playlist)
         }
     }
@@ -174,6 +174,11 @@ class HomeViewController: UIViewController {
         
         collectionView.reloadData()
     }
+    
+    private func addLongTapGesture() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didLongPress(_:)))
+        collectionView.addGestureRecognizer(gesture)
+    }
 
     @objc func didTapSettings() {
         let vc = SettingsViewController()
@@ -181,6 +186,40 @@ class HomeViewController: UIViewController {
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @objc func didLongPress(_ gesture: UILongPressGestureRecognizer) {
+        guard gesture.state == .began else {
+            return
+        }
+        
+        let touchPoint = gesture.location(in: collectionView)
+        
+        guard let indexPath = collectionView.indexPathForItem(at: touchPoint),
+              indexPath.section == 2
+        else {
+            return
+        }
+        
+        let model = tracks[indexPath.row]
+        
+        let actionSheet = UIAlertController(title: model.name, message: "Would you like to add this to a playlist?", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Add to Playlist", style: .default, handler: { [weak self] _ in
+            DispatchQueue.main.async {
+                let vc = LibraryPlaylistViewController()
+                vc.selectionHandler = { playlist in
+                    
+                }
+                vc.title = "Select Playlist"
+                
+                self?.present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+            }
+        }))
+        
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {

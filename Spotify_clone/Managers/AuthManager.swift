@@ -108,13 +108,13 @@ final class AuthManager {
         print(#function)
         guard !refreshingToken else {
             // Append the completion
-            print("토큰리프레쉬 안함")
+
             onRefreshBlocks.append(completion)
             return
         }
         if shouldRefreshToken {
             // Refresh
-            print("토큰리프레쉬함")
+
             refreshIfNeeded { [weak self] success in
                 if let token = self?.accessToken, success {
                     completion(token)
