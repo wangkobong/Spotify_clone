@@ -75,6 +75,32 @@ class AlbumViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        fetchData()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapActions))
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.frame = view.bounds
+    }
+    
+    @objc private func didTapActions() {
+        let actionSheet = UIAlertController(title: album.name, message: "Actions", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Save album", style: .destructive, handler: { [weak self] _ in
+            guard let strongSelf = self else { return }
+            APICaller.shared.saveAlbum(album: strongSelf.album) { success in
+                DispatchQueue.main.async {
+                    if success {
+                        NotificationCenter.default.post(name: .albumSavedNotification, object: nil)
+                    }
+                }
+            }
+        }))
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func fetchData() {
         APICaller.shared.getAlbumDetails(for: album) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -91,11 +117,6 @@ class AlbumViewController: UIViewController {
                 }
             }
         }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        collectionView.frame = view.bounds
     }
 }
 
